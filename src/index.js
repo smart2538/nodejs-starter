@@ -3,7 +3,6 @@ import express from 'express'
 import routeHandlers from './route'
 
 const app = express()
-
 const port = process.env.PORT || 3000
 
 app.listen(port, (err) => {
@@ -13,5 +12,10 @@ app.listen(port, (err) => {
     console.log(`listen: ${port}`)
   }
 })
+app.use(express.static(`static`))
 
 app.use('/api', routeHandlers)
+
+
+
+
